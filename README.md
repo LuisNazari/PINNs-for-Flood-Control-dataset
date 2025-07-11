@@ -17,7 +17,10 @@ In order to train a PINN to model the water flow function $Q(x,t)$ and level $h(
 The analysis considers the one-dimensional propagation of the water flow from the initial condition defined by a stationary and uniform regime in Eq. \eqref{eq:inicialSimulated}, with $h(0,0) = h_{t_0}$ m, and the boundary conditions in Eq. \eqref{eq:boundarySimulated} parametrized by $\alpha_i$ with $i = \{0,1,2 \dots, 8 \}$ and $\Tilde{t}$ a partition of the time domain. For all channels, $\alpha_0 = 1.2$, $\alpha_1 = \alpha_5 = 0.02$, $\alpha_2 = \alpha_6 = \alpha_8 =1.5$, $\alpha_3 = -0.02$, and $\alpha_4 = -1.5$. The time domain is $[0,46000]$ seconds with partition $\Tilde{t} = [0,54,81,135,162,216,258,327,350,460] \times 10^{2}$. In contrast, the initial conditions differ and are defined as $h_{t_0} = [2,4,3,3]$ m for channels 1, 2, 3 and 4, respectively.
 
 
+REFERENCES
 
 [1] CUNGE, Jean. Practical Aspects of Computational River Hydraulics. : Pitman Advanced Publishing Program, 1980
+
 [2] CHAUDHRY, M Hanif. Open-Channel Flow. : Springer Science & Business Media, 2007.
+
 [3] LITRICO, Xavier; FROMION, Vincent. Modeling and Control of Hydrosystems. Springer Science & Business Media, 2009.
