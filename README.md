@@ -13,7 +13,7 @@ where $n$ is the Manning coefficient (m^(-1/3)s) and $R(x,t)$ is the hydraulic r
 
 In order to train a PINN to model the water flow $Q(x,t)$ and level $h(x,t)$ functions, an appropriate database is required. The training data composed by $U= \left\{\langle x^{i}_{u}, t^{i}_{u},h^{i}_{u}, Q^{i}_{u}\rangle \right\}^{N_u}_{i=1}$ can be obtained by numerical solution of PDE (22) from the given initial and boundary conditions. To define the dataset, let us consider the dynamic system given by Equations 22a - 22b with boundary and initial conditions defined as:
 
-    <img width="815" height="166" alt="fig1" src="https://github.com/user-attachments/assets/84d8a998-884e-47b4-9eae-a0d81f1c9c2a" />
+<img width="815" height="166" alt="fig1" src="https://github.com/user-attachments/assets/c8dfc1d9-212c-4431-ad48-4b2998fc3412" />
 
 The analysis considers the one-dimensional propagation of the water flow from the initial condition defined by a stationary and uniform regime in Eq. 35b, with $h(0,0) = h_{t_0}$ m, and the boundary conditions in Eq. 35a parametrized by $\alpha_i$ with $i = \{0,1,2 \dots, 8 \}$ and $\Tilde{t}$ a partition of the time domain. For all channels, $\alpha_0 = 1.2$, $\alpha_1 = \alpha_5 = 0.02$, $\alpha_2 = \alpha_6 = \alpha_8 =1.5$, $\alpha_3 = -0.02$, and $\alpha_4 = -1.5$. The time domain is $[0,46000]$ seconds with partition $\Tilde{t} = [0,54,81,135,162,216,258,327,350,460] \times 10^{2}$. In contrast, the initial conditions differ and are defined as $h_{t_0} = [2,4,3,3]$ m for channels 1, 2, 3 and 4, respectively.
 
