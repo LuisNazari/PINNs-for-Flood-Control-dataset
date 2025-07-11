@@ -11,7 +11,7 @@ where $t$ is the time variable (s); $x$ is the space variable which models the d
 
 where $n$ is the Manning coefficient (m^(-1/3)s) and $R(x,t)$ is the hydraulic radius (m), defined by $R(x,t) = A(x,t)/P_w(x,t)$, with $P_w(x,t)$ defining the wetted perimeter (m).
 
-In order to train a PINN to model the water flow $Q(x,t)$ and level $h(x,t)$ functions, an appropriate database is required. The training data composed by $U= \left\{\langle x^{i}_{u}, t^{i}_{u},h^{i}_{u}, Q^{i}_{u}\rangle \right\}^{N_u}_{i=1}$ can be obtained by numerical solution of PDE (22) from the given initial and boundary conditions. To define the dataset, let us consider the dynamic system given by Equations 22a - 22b with boundary and initial conditions defined as:
+In order to train a PINN to model the water flow $Q(x,t)$ and level $h(x,t)$ functions, an appropriate database is required. The training data composed by $U= (x,t,h,Q)$ can be obtained by numerical solution of PDE (22) from the given initial and boundary conditions. To define the dataset, let us consider the dynamic system given by Equations 22a - 22b with boundary and initial conditions defined as:
 
 <img width="815" height="166" alt="fig1" src="https://github.com/user-attachments/assets/c8dfc1d9-212c-4431-ad48-4b2998fc3412" />
 
