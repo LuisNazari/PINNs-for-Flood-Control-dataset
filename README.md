@@ -1,19 +1,15 @@
 # PINNs-for-Flood-Control-dataset
 This repository includes the dataset use for training PINNs for flood control in a Hydrographic Basin.
 
-Considering the dynamics of unidimensional (or two-dimensional) water flow propagation in a single open channel without downstream inflow, the standard conceptual approach drives the flow rate and water level dynamics through the solution of the Saint-Venant equations \cite{cunge1980practical, chaudhry2007open}. The Saint-Venant equations \eqref{pbase:Saint_eq-1} and \eqref{pbase:Saint_eq-2} are two partial differential equations resulting from the physical principles of mass and momentum conservation, defined as follows:
+Considering the dynamics of unidimensional (or two-dimensional) water flow propagation in a single open channel without downstream inflow, the standard conceptual approach drives the flow rate and water level dynamics through the solution of the Saint-Venant equations \cite{cunge1980practical, chaudhry2007open}. The Saint-Venant equations 22a and 22b are two partial differential equations resulting from the physical principles of mass and momentum conservation, defined as follows:
 
 <img width="718" height="159" alt="fig2" src="https://github.com/user-attachments/assets/9f9f8320-5c75-4c8c-b723-8c020b16b5b9" />
 
-where $t$ is the time variable (s); $x$ is the space variable which models the distance from the source (m); $Q(x,t)$ is the water flow (m$^3$/s); $h(x,t)$  is the water level (m); $A(x,t)$ is cross-sectional flow area (m$^2$); $g$ is the gravitational acceleration (m/s$^2$); $S_0$ is the bed slope; and $S_f $ is the friction slope, with the classical Manning formula:
+where $t$ is the time variable (s); $x$ is the space variable which models the distance from the source (m); $Q(x,t)$ is the water flow (m^3/s); $h(x,t)$  is the water level (m); $A(x,t)$ is cross-sectional flow area (m^2); $g$ is the gravitational acceleration (m/s^2); $S_0$ is the bed slope; and $S_f $ is the friction slope, with the classical Manning formula:
 
- 
-\begin{equation}\label{eq:CoefManning}
-   S_f(x,t) = \frac{n^2 Q(x,t)\left|Q(x,t)\right|}{A^2(x,t)R^{\frac{1}{3}}(x,t)}
-\end{equation}
+ <img width="597" height="80" alt="fig3" src="https://github.com/user-attachments/assets/343932a8-ae98-4b99-8f5f-80af70b841d4" />
 
-
-where $n$ is the Manning coefficient (m$^{-1/3}$s) and $R(x,t)$ is the hydraulic radius (m), defined by $R(x,t) = A(x,t)/P_w(x,t)$, with $P_w(x,t)$ defining the wetted perimeter (m)  \cite{litrico2009modeling}.
+where $n$ is the Manning coefficient (m^(-1/3)s) and $R(x,t)$ is the hydraulic radius (m), defined by $R(x,t) = A(x,t)/P_w(x,t)$, with $P_w(x,t)$ defining the wetted perimeter (m)  \cite{litrico2009modeling}.
 
 In order to train a PINN to model the water flow function $Q(x,t)$ and level $h(x,t)$, an appropriate database is required. The training data $U= \left\{\langle x^{i}_{u}, t^{i}_{u},h^{i}_{u}, Q^{i}_{u}\rangle \right\}^{N_u}_{i=1}$ can be obtained by numerical solution of PDE \eqref{eq:dynamicsimulated_Modeling} from the given initial and boundary conditions. To define the dataset, let us consider the dynamic system given by Equations \eqref{pbase:Saint_eq-1}-\eqref{pbase:Saint_eq-2} with boundary and initial conditions defined as:
     <img width="815" height="166" alt="fig1" src="https://github.com/user-attachments/assets/84d8a998-884e-47b4-9eae-a0d81f1c9c2a" />
